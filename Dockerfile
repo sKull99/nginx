@@ -11,11 +11,11 @@ MAINTAINER sKull99 <jefe99.jeb@gmail.com>
 
 ENV UPDATE "2017-09-11"
 
-## Import the Centos6 and add EPEL repo
-RUN rpm --import http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6 \
-	&& rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+## Install EPEL repo
+RUN yum  -y install \
+	epel-release
 
-## YUM
+## Install package
 RUN yum -y install \
 	vim \
 	nginx
